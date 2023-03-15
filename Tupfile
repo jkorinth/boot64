@@ -1,0 +1,2 @@
+include_rules
+: boot64.s |> !asm |> boot64.bin

@@ -1,0 +1,3 @@
+NASM_FLAGS=-f bin
+
+!asm = |> nasm $(NASM_FLAGS) -o %o %f |> %B.bin
