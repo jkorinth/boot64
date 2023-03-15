@@ -7,11 +7,18 @@ boot_x32:
 .loop:
 	lodsb
 	or al, al
-	jz .halt
+	jz .next
 	or eax, 0x0f00
 	mov word [ebx], ax
 	add ebx, 2
 	jmp .loop
+.next:
+	; busy wait
+	mov ecx, 0x0fffffff
+.busy:	
+	loop .busy
+	jmp gdt32.code:boot_x64
+
 .halt:
 	cli
 	hlt

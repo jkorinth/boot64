@@ -17,7 +17,7 @@ _start:
 	mov ax, STAGE1
 	mov bx, ax		; write to 0000:1000h
 	mov ah, 0x02		; read from disk
-	mov al, 0x08		; N sectors
+	mov al, 32		; N sectors
 	mov ch, 0x00		; cylinder 0
 	mov cl, 2		; from sector 2
 	mov dh, 0		; head 0
